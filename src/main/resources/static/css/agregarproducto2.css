@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 60px;
+    color: rgba(114, 153, 86, 1);
+}
+
+.contenido {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.poteMayor label {
+    color: rgba(114, 153, 86, 1);
+    font-size: 20px;
+}
+
+.item label {
+    color: rgba(114, 153, 86, 1);
+    font-size: 20px;
+}
+
+.item input {
+    background-color: rgba(213, 213, 213, 0.93);
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+label {
+    color: rgba(114, 153, 86, 1);
+    font-size: 20px;
+}
+.poteMayor{
+    margin-top: 30px;
+    width: 330px;
+}
+.info button {
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color:rgba(114, 153, 86, 1);
+}
+.info .lastboton{
+    background-color:rgba(87, 75, 65, 1);
+    
+}
+.item{
+    
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+}
+
+.yoto{
+    width: 200px;
+}
+
+#uploadForm {
+    display: none;
+}
+
+#previewContainer {
+    display: none;
+}
+
+#imagenSeleccionada {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+.deleteBtn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.removeButton {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#deleteIcon {
+    width: 42px;
+        height: 42px;
+}
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 139px;
+    height: 23px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.custom-select select {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(213, 213, 213, 0.93);
+}
+
+.categoria-select:focus {
+    outline: none;
+    border-color: rgba(66, 139, 202, 1);
+    box-shadow: 0 0 5px rgba(66, 139, 202, 0.5);
+}
+
+.custom-select select option {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: rgba(114, 153, 86, 1);
+}
+
+.custom-select select option:hover {
+    background-color: rgba(66, 139, 202, 0.5);
+}

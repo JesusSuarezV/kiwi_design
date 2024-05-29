@@ -1,0 +1,49 @@
+<div class="cuerpo" xmlns:th="http://www.w3.org/1999/xhtml"> <!-- div de todo el menú-->
+        <div class="menu-principal" id="menu-principal">
+            <ul class="lista-principal-menu" id="lista-close"> <!--Lista general del menu-->
+                <li class="lista-principal lista-principal--click">
+                    <div class="lista-item">
+                        <a class="lista-link">Catálogo</a>
+                    </div>
+                    <ul class="lista-secundaria">
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Productos/Nuevo_Producto}">Agregar producto</a>
+                        </li>
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Productos}">Ver productos</a>
+
+                        </li>
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Categorias/Nueva_Categoria}">Agregar categoría</a>
+                        </li>
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Categorias}">Ver categorías</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="lista-principal lista-principal--click">
+                    <div class="lista-item">
+                        <a class="lista-link">Usuarios</a>
+                    </div>
+                    <ul class="lista-secundaria">
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Usuarios}"> Ver usuarios</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="lista-principal  lista-principal--click">
+                    <div class="lista-item">
+                        <a class="lista-link">Marketing</a>
+                    </div>
+                    <ul class="lista-secundaria">
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Productos_Descuento}">Promociones</a>
+                        </li>
+                        <li class="lista-item-2 lista-subitem">
+                            <a class="lista-link" th:href="@{/Codigos}">Generar códigos</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

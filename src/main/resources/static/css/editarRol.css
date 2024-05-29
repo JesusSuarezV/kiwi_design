@@ -1,0 +1,135 @@
+h2 {
+  text-align: center;
+  color: #729956;
+  letter-spacing: 1px;
+  font-size: 36px;
+}
+
+h3 {  
+  text-align: left;
+  color: #729956;
+  letter-spacing: 1px;
+  font-size: 25px;
+  margin: 0;
+}
+
+* {
+  font-family: 'Londrina Solid';
+  letter-spacing: 1px;
+}
+
+.select {
+  background: rgba(185, 214, 150, 0.93);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  border-radius: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.rol{
+  color: black;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.clic{
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.manu {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.7s ease-in-out;
+  padding-left: 120px;
+  margin: 0;
+}
+
+.manu.active {
+  max-height: 1000px;
+  transition: max-height 1.5s ease-out;
+}
+
+.manu:not(.active) {
+  transition: max-height 0.5s ease-out;
+}
+
+.manu li {
+  background-color: #729956;
+  width: 250px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.arrow .list-arrow {
+  transform: rotate(90deg);
+}
+
+.list-arrow {
+  margin-right: 10px;
+}
+
+.guardar {
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(208, 162, 94, 1);
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.role {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cuadrilla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#roles {
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}

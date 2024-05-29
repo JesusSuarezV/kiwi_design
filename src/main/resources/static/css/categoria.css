@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid', sans-serif;
+}
+
+body{
+    background-color: #F5F0F0;
+}
+
+.titulo{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 30px;
+    color: #729956;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-listaCategoria{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    margin: 0 20px;
+    margin-left: 150px;
+    font-size: 25px;
+    color: #729956;
+}
+
+.flex-container-listaCategoria ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.flex-container-listaCategoria li{
+    margin-bottom: 15px;
+}
+
+.flex-container-listaCategoria li:first-child a {
+    margin-left: 30px; /* Agrega un margen solo al primer elemento dentro del contenedor flex */
+}
+
+
+.flex-container-listaCategoria a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.producto {
+    width: auto;
+    height: auto;
+    margin: 20px 20px;
+    text-align: center;
+}
+
+.grid-container-categoriaProductos{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    justify-content: center;
+    width: 80%;
+    text-align: center;
+}
+
+.producto p{
+    color: #FF9900;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.producto h3{
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.grid-container-categoriaProductos img{
+    background-color: #B9D696;
+    width: 300px;
+    height: 300px;
+}
+
+.paginacion {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	background:#729956;
+	text-decoration: none;
+    border-radius: 10px;
+}
+
+.paginacion ul li a:hover {
+	background:#B9D696;
+}
+
+.paginacion ul li .active {
+	background:#B9D696;
+	font-weight:bold;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #729956;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 30%;
+    height: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

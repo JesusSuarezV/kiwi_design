@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdministrador</title>
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/registrarUsuario.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+</head>
+
+<body>
+<div class="contenedor" id="contenedor">
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+    <div id="greenNotification" th:if="${param.exitoRol}" class="notification green">
+        <span>El rol se ha actualizado correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="orangeNotification" th:if="${param.exitoBloqueo}" class="notification orange">
+        <span>El usuario ha sido bloqueado</span>
+        <span class="close" onclick="closeNotification('orangeNotification')">×</span>
+    </div>
+
+
+
+    <div class="contenido">
+        <br>
+        <br>
+        <h2>Usuarios</h2>
+        <br>
+        <br>
+        <tr th:each="usuario : ${usuarios}">
+            <div class="cuadro">
+                <div class="from">
+                    <div class="formulario">
+                        <div class="row">
+                            <div class="txt">
+                                <label for="nombre">Nombre:</label>
+                            </div>
+                            <input type="text" id="nombre" name="nombre"  th:value="${usuario.nombre}">
+                        </div>
+                        <div class="row">
+                            <div class="txt">
+                                <label for="apellido">Apellido:</label>
+                            </div>
+                            <input type="text" id="apellido" name="apellido"  th:value="${usuario.apellido}">
+                        </div>
+                        <div class="row">
+                            <div class="txt">
+                                <label for="nombre">Correo:</label>
+                            </div>
+                            <input type="text" id="correo" name="correo" th:value="${usuario.correo}">
+                        </div>
+                        <div class="row">
+                            <div class="txt">
+                                <label for="apellido">Rol:</label>
+                            </div>
+                            <input type="text" id="rol" name="rol" th:value="${usuario.role.nombre}">
+
+                        </div>
+                    </div>
+
+                    <div class="botones">
+                        <button class="editar" th:onclick="|window.location.href='/Usuarios/${usuario.id}/Editar_Rol'|"></button>
+                        <button class="eliminar"th:onclick="|if (confirmarOcultar()) { window.location.href='/Usuarios/${usuario.id}/Bloquear_Usuario'; }|"></button>
+                    </div>
+                </div>
+
+            </div>
+        </tr>
+        <section class="paginacion">
+            <ul th:if="${usuarios.totalElements > 0}">
+                <li th:if="${usuarios.hasPrevious()}">
+                    <a th:href="@{${'/Usuarios'}(page=1)}">&lt;&lt;</a>
+                </li>
+                <li th:if="${usuarios.hasPrevious()}">
+                    <a th:href="@{${'/Usuarios'}(page=${usuarios.number})}">&lt;</a>
+                </li>
+                <li th:each="pageNumber : ${#numbers.sequence(1, usuarios.totalPages)}">
+                    <a th:if="${pageNumber > usuarios.number - 3 && pageNumber < usuarios.number + 5}"
+                       th:href="@{${'/Usuarios'}(page=${pageNumber})}"
+                       th:classappend="${pageNumber - 1 == usuarios.number ? 'active' : ''}" th:text="${pageNumber}">
+                    </a>
+                </li>
+                <li th:if="${usuarios.hasNext()}">
+                    <a th:href="@{${'/Usuarios'}(page=${usuarios.number + 2})}">&gt;</a>
+                </li>
+                <li th:if="${usuarios.hasNext()}">
+                    <a th:href="@{${'/Usuarios'}(page=${usuarios.totalPages})}">&gt;&gt;</a>
+                </li>
+            </ul>
+        </section>
+
+
+
+    </div>
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+</html>

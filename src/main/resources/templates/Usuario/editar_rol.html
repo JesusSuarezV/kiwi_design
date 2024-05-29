@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdministrador</title>
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/editarRol.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+    <script src="https://kit.fontawesome.com/43d3343120.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+        <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+        <div class="contenido">
+            <br>
+            <br>
+            <h2 th:text="'Modificar Rol de:' + ${usuario.Correo}">Modificar Rol</h2>
+
+            <br>
+            <br>
+            <form th:action="@{'/Usuarios/' + ${usuario.id} + '/Actualizar_Rol'}" method="POST">
+            <div class="cuadrilla">
+                <div class="role">
+                    <div class="dropdown">
+                        <label for="roles">Seleccione el rol que desea que tenga el usuario:</label>
+                        <br>
+                        <br>
+                        <select name="idRol" id="roles" required>
+                            <option th:value="5" th:selected="${usuario.role.id == 5}">CLIENTE</option>
+                            <option th:value="4" th:selected="${usuario.role.id == 4}">LOGISTICA</option>
+                            <option th:value="3" th:selected="${usuario.role.id == 3}">MARKETING</option>
+                            <option th:value="2" th:selected="${usuario.role.id == 2}">ADMINISTRADOR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="boton">
+                    <button class="guardar">Guardar</button>
+                </div>
+            </div>
+                </form>
+
+        </div>
+    </div>
+    <script src="../js/editarRol.js"></script>
+</body>
+
+</html>

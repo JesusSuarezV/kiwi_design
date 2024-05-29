@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <title>Ver Descuentos</title>
+
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarProduct.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+        <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+        <div class="contenido">
+            <h2 class="titulo">Catálogo</h2>
+            <h3 class="sudtitulo">Productos</h3>
+            <tr th:each="producto : ${productos}">
+            <div class="cuadrilla">
+
+                <div class="pote1">
+                    <div class="nombreProducto">
+                        <label for="nombre-producto">Nombre del producto:</label>
+                        <input type="text" name="nombre-categoria" id="nombre-categoria" th:value="${producto.nombre}">
+                    </div>
+                </div>
+                <div class="pote2">
+                    <div class="imagen imagen-con-margenes">
+                        <img th:src="@{'data:image/png;base64,' + ${producto.imagenBase64}}" alt="imagen">
+                        <!--<img th:src="@{/img/Fotos productos/Aguacate.png}" alt="imagen">-->
+                        <!-- Write your comments here -->
+
+                </div>
+                    <div class="pote4">
+                        <div class="mid">
+                            <div class="goyo">
+                            <label for="categoria">Categoría:</label></div>
+                            <input type="text" name="nombre-categoria" id="nombre-categoria" th:value="${producto.categoria.nombre}">
+                        </div>
+                        <div class="mid">
+                            <div class="goyo">
+                            <label for="precio">Precio:</label></div>
+                            <input type="text" name="nombre-categoria" id="nombre-categoria" th:value="${producto.precio}">
+                        </div>
+                        <div class="mid">
+                            <div class="goyo">
+                            <label for="cantidad">Cantidad:</label></div>
+                            <input type="text" name="nombre-categoria" id="nombre-categoria" th:value="${producto.unidades}">
+                        </div>
+                    </div>
+                </div>
+                <div class="pote3">
+                    <div class="botones">
+                        <button class="imagenes" th:onclick="|window.location.href='/Productos_Descuento/${producto.id}/Descuentos'|">Descuentos</button>
+
+
+
+                    </div>
+                </div>
+               
+            </div>
+
+        </tr>
+            <section class="paginacion">
+                <ul th:if="${productos.totalElements > 0}">
+                    <li th:if="${productos.hasPrevious()}">
+                        <a th:href="@{${'/Productos_Descuento'}(page=1)}">&lt;&lt;</a>
+                    </li>
+                    <li th:if="${productos.hasPrevious()}">
+                        <a th:href="@{${'/Productos_Descuento'}(page=${productos.number})}">&lt;</a>
+                    </li>
+                    <li th:each="pageNumber : ${#numbers.sequence(1, productos.totalPages)}">
+                        <a th:if="${pageNumber > productos.number - 3 && pageNumber < productos.number + 5}"
+                           th:href="@{${'/Productos_Descuento'}(page=${pageNumber})}"
+                           th:classappend="${pageNumber - 1 == productos.number ? 'active' : ''}" th:text="${pageNumber}">
+                        </a>
+                    </li>
+                    <li th:if="${productos.hasNext()}">
+                        <a th:href="@{${'/Productos_Descuento'}(page=${productos.number + 2})}">&gt;</a>
+                    </li>
+                    <li th:if="${productos.hasNext()}">
+                        <a th:href="@{${'/Productos_Descuento'}(page=${productos.totalPages})}">&gt;&gt;</a>
+                    </li>
+                </ul>
+            </section>
+
+
+        </div>
+    </div>
+    <script th:src="@{/js/menu.js}"></script>
+</body>
+
+</html>

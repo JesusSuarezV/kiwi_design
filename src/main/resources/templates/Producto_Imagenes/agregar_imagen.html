@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarproducto2.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+        <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+        <div class="contenido">
+            <h2>Catálogo</h2>
+            <form th:action="@{'/Productos/' + ${producto.id} + '/Imagenes/Guardar_Imagen'}" method="POST" enctype="multipart/form-data">
+
+                <div class="info">
+                    <label for="imagenPrincipal">Imagen:</label>
+                    <input type="file" id="imagen" name="imagen" style="display: inline-block;" accept="image/*" required>
+                </div>
+
+
+
+                <div class="info">
+                <button type=submit class="lastboton">Cargar Imagen</button>
+            </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script th:src="@{/js/menu.js}"></script>
+</body>
+
+</html>

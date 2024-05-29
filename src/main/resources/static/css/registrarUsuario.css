@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: 'Londrina Solid';
+    text-align: center;
+    color: #729956;
+    letter-spacing: 1px;
+    font-size: 36px;
+}
+
+.cuadro {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.from {
+    font-family: 'Londrina Solid';
+    letter-spacing: 2px;
+    background-color: #574B41;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.row label {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.row input {
+    flex: 1;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+.txt {
+    width: 180px;
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+}
+
+.eliminar,
+.editar {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+
+.editar {
+    
+    margin-bottom: 5px;
+    background-image: url('../img/editar.png');
+    background-size: cover; 
+}
+
+.eliminar {
+    margin-top: 5px;
+    
+    background-image: url('../img/eliminar.png');
+    background-size: cover; 
+    background-position: center;
+}
+
+.paginacion {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	background:#729956;
+	text-decoration: none;
+    border-radius: 10px;
+}
+
+.paginacion ul li a:hover {
+	background:#B9D696;
+}
+
+.paginacion ul li .active {
+    color: #729956;
+	background:#B9D696;
+	font-weight:bold;
+}

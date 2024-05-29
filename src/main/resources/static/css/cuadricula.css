@@ -1,0 +1,72 @@
+/*Estilos para insertar el menu y navbar*/
+
+body {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 55px 100vh;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row: 1;
+    border-style: none;
+}
+
+.menu {
+    grid-column: 1;
+    grid-row: 2;
+    border-style: none;
+}
+
+.contenido {
+    grid-column: 2;
+    grid-row: 2;
+    border-style: none;
+    align-items: center;
+}
+
+.notification {
+    padding: 15px;
+    color: #fff;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 9999;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.blue {
+    background-color: #007bff; /* Azul */
+}
+
+.green {
+    background-color: #28a745; /* Verde */
+}
+
+.red {
+    background-color: #dc3545; /* Rojo */
+}
+
+.orange {
+    background-color: #ed5c2c; /* Naranja */
+}
+
+.notification .close {
+    float: right;
+    cursor: pointer;
+}
+
+.imagen-con-margenes {
+    margin: 7px; /* Agrega un margen de 10px alrededor de la imagen */
+}

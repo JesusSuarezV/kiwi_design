@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <title>Ver imagenes de un producto</title>
+
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarProduct.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+</head>
+
+<body>
+<div class="contenedor" id="contenedor">
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+    <div id="greenNotification" th:if="${param.exitoAgregar}" class="notification green">
+        <span>La imagen se ha cargado correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorImagen}" class="notification red">
+        <span>Error: El tamaño de la imagen debe ser menor a 10 MB </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="greenNotification" th:if="${param.exitoEliminar}" class="notification green">
+        <span>La imagen se ha dado de baja correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorEliminar}" class="notification red">
+        <span>Error: Ha ocurrido un error al intentar dar de baja la imagen </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorLimite}" class="notification red">
+        <span>Error: Solo se pueden cargar maximo 6 imagenes por producto </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div class="contenido">
+        <h2 class="titulo" th:text="'Imagenes de ' + ${producto.nombre}"></h2>
+        <h3 class="sudtitulo">Productos</h3>
+        <tr th:each="imagen : ${imagenes}">
+            <div class="cuadrilla">
+
+                <div class="pote2">
+                    <div class="imagen imagen-con-margenes">
+                        <img th:src="@{'data:image/png;base64,' + ${imagen.imagenBase64}}" alt="imagen">
+                        <!--<img th:src="@{/img/Fotos productos/Aguacate.png}" alt="imagen">-->
+                        <!-- Write your comments here -->
+
+                    </div>
+                </div>
+                <div class="pote3">
+                    <div class="botones">
+                        <button class="eliminar"
+                                th:onclick="|if (confirmarOcultar()) { window.location.href='/Productos/${imagen.producto.id}/Imagenes/${imagen.id}/Eliminar_Imagen'; }|">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </tr>
+        <div class="botones">
+            <button class="guardar"
+                    th:onclick="|window.location.href='/Productos/${producto.id}/Imagenes/Nueva_Imagen'|">Cargar Una
+                Imagen
+            </button>
+        </div>
+
+
+    </div>
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+
+</html>

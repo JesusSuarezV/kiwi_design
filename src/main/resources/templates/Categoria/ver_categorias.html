@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <title>Ver Categorías</title>
+
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarCategoria.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/crearCodigoDescuento.css}">
+
+
+
+</head>
+
+<body>
+<div class="contenedor" id="contenedor">
+
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+    <div id="greenNotification" th:if="${param.exitoAgregar}" class="notification green">
+        <span>La Categoría se ha guardado correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorAgregar}" class="notification red">
+        <span>Error: Esta categoria ya existe </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorCategoria}" class="notification red">
+        <span>Error: Esta categoria no existe </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="greenNotification" th:if="${param.exitoActualizar}" class="notification green">
+        <span>La Categoría se ha actualizado correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorActualizar}" class="notification red">
+        <span>Error: Este nombre ya esta asignado a una categoria </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="greenNotification" th:if="${param.exitoEliminar}" class="notification green">
+        <span>La Categoría se ha dado de baja correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorEliminar}" class="notification red">
+        <span>Error: Esta categoria tiene productos asignados, eliminelos primero </span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div class="contenido">
+        <h2 class="titulo">Ver Categorías</h2>
+
+
+        <div class="espacio">
+            <tr th:each="categoria : ${categorias}">
+                <div class="cuadro">
+                    <a class="nombre-categoria" th:text="${categoria.nombre}">Nombre categoría</a>
+                    <a class="boton-editar" th:href="@{'/Categorias/' + ${categoria.id} + '/Editar_Categoria'}">Editar</a>
+                    <a class="boton-eliminar" th:href="@{'/Categorias/' + ${categoria.id} + '/Eliminar_Categoria'}" onclick="return confirmarOcultar()">Eliminar</a>
+                </div>
+
+            </tr>
+
+        </div>
+        <br>
+
+        <section class="paginacion">
+            <ul th:if="${categorias.totalElements > 0}">
+                <li th:if="${categorias.hasPrevious()}">
+                    <a th:href="@{${'/Categorias'}(page=1)}">&lt;&lt;</a>
+                </li>
+                <li th:if="${categorias.hasPrevious()}">
+                    <a th:href="@{${'/Categorias'}(page=${categorias.number})}">&lt;</a>
+                </li>
+                <li th:each="pageNumber : ${#numbers.sequence(1, categorias.totalPages)}">
+                    <a th:if="${pageNumber > categorias.number - 3 && pageNumber < categorias.number + 5}"
+                       th:href="@{${'/Categorias'}(page=${pageNumber})}"
+                       th:classappend="${pageNumber - 1 == categorias.number ? 'active' : ''}" th:text="${pageNumber}">
+                    </a>
+                </li>
+                <li th:if="${categorias.hasNext()}">
+                    <a th:href="@{${'/Categorias'}(page=${categorias.number + 2})}">&gt;</a>
+                </li>
+                <li th:if="${categorias.hasNext()}">
+                    <a th:href="@{${'/Categorias'}(page=${categorias.totalPages})}">&gt;&gt;</a>
+                </li>
+            </ul>
+        </section>
+
+
+    </div>
+
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+</html>

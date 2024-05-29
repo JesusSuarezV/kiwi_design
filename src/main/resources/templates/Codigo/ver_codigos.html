@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear codigo de descuento</title>
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/crearCodigoDescuento.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+</head>
+<body>
+<div class="contenedor" id="contenedor">
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+    <div id="greenNotification" th:if="${param.exitoAgregar}" class="notification green">
+        <span>El codigo se ha guardado correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorAgregar}" class="notification red">
+        <span>Error: Ha ocurrido un error al intentar agregar el codigo</span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div id="greenNotification" th:if="${param.exitoEliminar}" class="notification green">
+        <span>El codigo se ha dado de baja correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+    <div id="redNotification" th:if="${param.errorEliminar}" class="notification red">
+        <span>Error: Ha ocurrido un error al intentar dar de baja el codigo</span>
+        <span class="close" onclick="closeNotification('redNotification')">×</span>
+    </div>
+
+    <div class="contenido">
+        <h2 class="titulo">Códigos de descuentos</h2>
+        <tr th:each="codigo : ${codigos}">
+            <div class="ofertaProductos">
+                <div class="formulario">
+                    <div class="item-form">
+                        <label class="texto" for="codigo">Código </label>
+                        <input type="text" name="codigo" id="codigo" th:value="${codigo.codigo}">
+                    </div>
+                    <div class="item-form">
+                        <label class="texto" for="descuento">Descuento </label>
+                        <input type="text" name="descuento" id="descuento"th:value="${codigo.descuento}">
+                    </div>
+                    <div class="item-form">
+                        <label class="texto" for="envio">Envio Gratis?</label>
+                        <input type="text" name="envio" id="envio" th:value="${codigo.envioGratis} ? 'Sí' : 'No'">
+                    </div>
+                </div>
+                <div class="botones-cuadro">
+                    <a class="eliminar-icon" th:href="@{'/Codigos/' + ${codigo.codigo} + '/Eliminar_Codigo'}"
+                       onclick="return confirmarOcultar()">
+                        <img th:src="@{/img/eliminar.png}" alt="eliminar" class="eliminar-icon">
+                    </a>
+                </div>
+            </div>
+
+        </tr>
+
+        <div class="botones">
+            <button id="crearCodigoDescuento" th:onclick="|window.location.href='/Codigos/Nuevo_Codigo'|">Crear Codigo
+                de Descuento
+            </button>
+        </div>
+
+        <section class="paginacion">
+            <ul th:if="${codigos.totalElements > 0}">
+                <li th:if="${codigos.hasPrevious()}">
+                    <a th:href="@{'/Codigos'(page=1)}">&lt;&lt;</a>
+                </li>
+                <li th:if="${codigos.hasPrevious()}">
+                    <a th:href="@{'/Codigos'(page=${codigos.number})}">&lt;</a>
+                </li>
+                <li th:each="pageNumber : ${#numbers.sequence(1, codigos.totalPages)}">
+                    <a th:if="${pageNumber > codigos.number - 3 && pageNumber < codigos.number + 5}"
+                       th:href="@{'/Codigos'(page=${pageNumber})}"
+                       th:classappend="${pageNumber - 1 == codigos.number ? 'active' : ''}" th:text="${pageNumber}">
+                    </a>
+                </li>
+                <li th:if="${codigos.hasNext()}">
+                    <a th:href="@{'/Codigos'(page=${codigos.number + 2})}">&gt;</a>
+                </li>
+                <li th:if="${codigos.hasNext()}">
+                    <a th:href="@{'/Codigos'(page=${codigos.totalPages})}">&gt;&gt;</a>
+                </li>
+            </ul>
+        </section>
+
+
+    </div>
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Código</title>
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/generarCodigo.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+</head>
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+        <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+        <div class="contenido">
+            <h2 class="titulo">Crear Código</h2>
+            <form th:action="@{'/Codigos/Guardar_Codigo'}" method="POST">
+            <div class="generarCodigo">
+                <div class="descuento">
+                    <label for="descuento">Descuento </label>
+                    <input type="number" name="descuento" id="descuento" min="1" max="100" oninput="validity.valid||(value='');" required>
+                </div>
+                <div class="envioGratis">
+                    <label for="envio">Envio Gratis?</label>
+                    <select name="envio" id="envio" required>
+                        <option value="false">No</option>
+                        <option value="true">Sí</option>
+                    </select>
+                </div>
+            </div>
+            <div class="botones">
+                <button id="codigoBtn">Guardar Código</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script th:src="@{/js/menu.js}"></script>
+</body>
+</html>

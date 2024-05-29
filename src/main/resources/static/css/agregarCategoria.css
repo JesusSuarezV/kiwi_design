@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+}
+
+/*Agregar categoriasdscm*/
+
+.contenido{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo{
+    color: #729956;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+.form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+}
+
+.item-form{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item-form input{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    background-color: #D5D5D5EE;
+}
+
+.item-form label{
+    font-size: 20px;
+    color: #729956;
+}
+
+.categoria-boton, .categoria-boton-2{
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    color: white;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.categoria-boton{
+    background-color: #574B41;
+}
+
+/*Ver categorias*/
+
+.espacio{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+}
+
+.cuadro{
+    background-color: #574B41;
+    display: flex;
+    align-items: center;
+    width: 650px;
+    height: 60px;
+    justify-content: space-evenly;
+    border-radius: 30px;
+}
+
+.nombre-categoria{
+    background-color: #FFFFFFEE;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 55%;
+}
+
+.boton-editar, .boton-eliminar{
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    color: white;
+    width: 15%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.boton-editar{
+    background-color: #D0A25E;
+}
+
+.boton-eliminar{
+    background-color: #BF6767;
+}
+
+
+
+.categoria-boton-2{
+    background-color: #729956;
+}
+

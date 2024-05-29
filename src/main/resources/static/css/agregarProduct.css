@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+}
+h2 {
+    margin-top: 50px;
+    font-size: 60px;
+    color: rgba(114, 153, 86, 1);
+}
+h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgba(87, 75, 65, 1);
+}
+.contenido {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.pote1{
+    margin-top: 10px;
+}
+.cuadrilla {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #574B41;
+    margin-top: 50px;
+    border-radius: 20px;
+    width: 400px;
+    height: fit-content;
+}
+.cuadrilla input {
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.botones button {
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.eliminar {
+    background-color: rgba(191, 103, 103, 1);
+}
+.editar {
+    background-color: #D0A25E;
+}
+.imagenes {
+    background-color: #99b2dd;
+}
+.mid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.goyo{
+    width: 131px;
+}
+.pote2{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+.imagen img {
+    width: 100px;
+    height: 100px;
+}
+.guardar{
+    background-color: rgba(114, 153, 86, 1);
+}
+
+.paginacion {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	background:#729956;
+	text-decoration: none;
+    border-radius: 10px;
+}
+
+.paginacion ul li a:hover {
+	background:#B9D696;
+}
+
+.paginacion ul li .active {
+    color: #729956;
+	background:#B9D696;
+	font-weight:bold;
+}

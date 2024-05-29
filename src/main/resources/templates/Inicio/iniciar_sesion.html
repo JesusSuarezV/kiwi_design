@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <title>Login</title>
+</head>
+
+<body>
+
+<div id="redNotification" th:if="${param.error}" class="notification red">
+    <span>Error: Usuario o Contraseña invalidos </span>
+    <span class="close" onclick="closeNotification('redNotification')">×</span>
+</div>
+
+<div id="blueNotification" th:if="${param.exitoRegistro}" class="notification blue">
+    <span>Se ha enviado un enlace de confirmación al correo electronico</span>
+    <span class="close" onclick="closeNotification('blueNotification')">×</span>
+</div>
+
+<div id="greenNotification" th:if="${param.exitoActivacion}" class="notification green">
+    <span>Su cuenta ha sido activada exitosamente</span>
+    <span class="close" onclick="closeNotification('greenNotification')">×</span>
+</div>
+
+<div id="redNotification" th:if="${param.errorToken}" class="notification red">
+    <span>Error: Token invalido </span>
+    <span class="close" onclick="closeNotification('redNotification')">×</span>
+</div>
+
+<div class="contenedor">
+    <div class="cuadro">
+            <h1>INICIO DE SESION</h1>
+            <img th:src="@{/img/icon-user.png}" alt="">
+
+            <div class="form">
+
+                <form th:action="@{/Iniciar_Sesion}" method="post">
+                <div class="item-form">
+                    <div class="label-text">
+                        <label for="correo">Correo</label>
+                    </div>
+                    <input type="email"  name="username">
+                </div>
+                <div class="item-form">
+                    <div class="label-text">
+                        <label for="contraseña">Contraseña</label>
+                    </div>
+                    <input type="password" name="password">
+                </div>
+            </div>
+            <button class="inicio-sesion" type="submit">Inicia Sesion</button>
+        </form>
+        <div class="texto">
+            <a class="registrate" th:href="@{/Registrarse}">¿No tienes cuenta? Regístrate aquí</a>
+            <!-- <a class="recuperacion" href="">Recuperar Contraseña</a> -->
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+
+</html>

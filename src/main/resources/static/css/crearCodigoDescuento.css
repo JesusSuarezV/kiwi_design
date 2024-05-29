@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+}
+
+.contenido {
+    text-align: center;
+    margin-top: 50px; 
+    font-weight: bold;    
+}
+
+.titulo {
+    color: #729956;
+    font-size: 40px;
+}
+
+.ofertaProductos{
+    background-color: #574B41;
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: auto; /* Alinea el bloque hacia arriba */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ofertaProductos input{
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.ofertaProductos label{
+margin-right: 10px;
+}
+
+.descuento label{
+    margin-right: 25px;
+}
+
+.botones button{
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    background-color: #D0A25E;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fechaInicio label{
+    margin-right: 50px;
+}
+
+.fechaFin label{
+    margin-right: 60px;
+}
+
+.editar-icon,
+.eliminar-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botones-cuadro{
+    display: flex;
+    flex-direction: column;
+}
+
+.paginacion {
+	margin:20px 0;
+    margin-top: 250px;
+}
+
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	background:#729956;
+	text-decoration: none;
+    border-radius: 10px;
+}
+
+.paginacion ul li a:hover {
+	background:#B9D696;
+}
+
+.paginacion ul li .active {
+    background: #B9D696; /* Mantenemos el color de fondo */
+    font-weight: bold;
+    color: #729956; /* Establecemos el color del texto */
+}

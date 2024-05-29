@@ -1,0 +1,60 @@
+.contenido {
+    text-align: center;
+    margin-top: 50px; 
+    font-weight: bold;
+}
+
+.titulo {
+    color: #729956;
+    font-size: 40px;
+}
+
+.editarOferta{
+    background-color: #574B41;
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: auto; /* Alinea el bloque hacia arriba */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editarOferta input{
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.editarOferta label{
+margin-right: 10px;
+}
+
+.descuento label{
+    margin-right: 25px;
+}
+
+.botones button{
+    border-radius: 20px;
+    border: none;
+    padding: 10px ;
+    background-color: #D0A25E;
+    color: white;
+    font-weight: bold;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.fechaInicio label{
+    margin-right: 50px;
+}
+
+.fechaFin label{
+    margin-right: 60px;
+}
+
+

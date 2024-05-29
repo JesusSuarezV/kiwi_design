@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <title>Agregar Categoría</title>
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarCategoria.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+</head>
+
+<body>
+<div class="contenedor" id="contenedor">
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+    <div class="contenido">
+        <h2 class="titulo">Agregar Categoría</h2>
+        <form th:action="@{'/Categorias/Guardar_Categoria'}" method="POST">
+            <div class="form">
+                <div class="item-form">
+                    <label for="nombre-categoria">Nombre de la categoría</label>
+                    <input type="text" name="nombre" id="nombre-categoria" required>
+                </div>
+                <button class="categoria-boton">Agregar categoría</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+
+</html>

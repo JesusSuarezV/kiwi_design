@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'>
+    <title>Inicio</title>
+
+    <link rel="stylesheet" th:href="@{/css/cuadricula.css}">
+    <link rel="stylesheet" th:href="@{/css/agregarCategoria.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/crearCodigoDescuento.css}">
+
+
+
+</head>
+
+<body>
+<div class="contenedor" id="contenedor">
+
+    <div class="header" th:insert="~{Fragments/navbar.html}"></div>
+    <div class="menu" th:insert="~{Fragments/menu.html}"></div>
+
+    <div id="greenNotification" th:if="${param.continue}" class="notification green">
+        <span>Ha iniciado sesion correctamente</span>
+        <span class="close" onclick="closeNotification('greenNotification')">×</span>
+    </div>
+
+</div>
+<script th:src="@{/js/menu.js}"></script>
+</body>
+</html>

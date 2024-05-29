@@ -1,0 +1,57 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.titulo{
+    color: #729956;
+    margin-bottom: 50px;
+}
+   
+
+.fotoPerfil {
+    margin-right: 20px;
+}
+
+.fotoPerfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.infoPerfil h2 {
+    margin: 5px 0;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    margin-top: 20px;
+    margin-bottom: 500px;
+}
+
+.buttons button {
+    display: block;
+    padding: 10px 20px;
+    margin: 5px auto;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    width: 50%;
+    background-color: #729956;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}

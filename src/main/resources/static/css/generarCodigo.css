@@ -1,0 +1,64 @@
+*{
+    font-family: 'Londrina Solid', sans-serif;
+}
+
+.contenido {
+    text-align: center;
+    margin-top: 50px; 
+}
+
+.titulo {
+    color: #729956;
+    font-size: 40px;
+}
+
+.generarCodigo{
+    background-color: #574B41;
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: auto; /* Alinea el bloque hacia arriba */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.generarCodigo input{
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.generarCodigo label{
+margin-right: 10px;
+}
+
+.descuento label{
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+.botones button{
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px ;
+    background-color: #D0A25E;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#envio {
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
