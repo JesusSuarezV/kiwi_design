@@ -56,7 +56,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
             tokenRegistroRepository.save(tokenRegistro);
 
-            String url = "http://localhost:8080/Confirmacion/" + token;
+            String url = "http://kiwidesign-production.up.railway.app/Confirmacion/" + token;
             String cuerpo = "Por favor, confirme su cuenta en el siguiente enlace: <a href=\"" + url + "\">" + url + "</a>";
 
             mailService.enviarCorreo(usuario.getCorreo(), "ENLACE DE ACTIVACIÓN DE SU CUENTA KIWI DESIGN", cuerpo);
