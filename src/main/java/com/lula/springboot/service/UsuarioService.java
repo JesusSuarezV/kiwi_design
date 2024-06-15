@@ -10,7 +10,9 @@ public interface UsuarioService {
 
     public boolean registrarUsuario(Usuario usuario);
 
-    public Page<Usuario> obtenerUsuarios(Pageable pageable);
+    public Page<Usuario> obtenerUsuariosParaAdmin(Pageable pageable);
+
+    public Page<Usuario> obtenerUsuariosParaSuperadmin(Pageable pageable);
 
     public boolean editarUsuario(long id);
 

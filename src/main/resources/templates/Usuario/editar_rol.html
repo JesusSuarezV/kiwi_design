@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,7 @@
                             <option th:value="5" th:selected="${usuario.role.id == 5}">CLIENTE</option>
                             <option th:value="4" th:selected="${usuario.role.id == 4}">LOGISTICA</option>
                             <option th:value="3" th:selected="${usuario.role.id == 3}">MARKETING</option>
-                            <option th:value="2" th:selected="${usuario.role.id == 2}">ADMINISTRADOR</option>
+                            <option th:value="2" th:selected="${usuario.role.id == 2}" sec:authorize="hasAuthority('SUPERADMIN')">ADMINISTRADOR</option>
                         </select>
                     </div>
                 </div>

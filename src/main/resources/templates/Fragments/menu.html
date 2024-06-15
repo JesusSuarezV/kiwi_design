@@ -1,7 +1,7 @@
 <div class="cuerpo" xmlns:th="http://www.w3.org/1999/xhtml"> <!-- div de todo el menú-->
         <div class="menu-principal" id="menu-principal">
             <ul class="lista-principal-menu" id="lista-close"> <!--Lista general del menu-->
-                <li class="lista-principal lista-principal--click">
+                <li class="lista-principal lista-principal--click" sec:authorize="hasAuthority('ADMINISTRADOR') or hasAuthority('SUPERADMIN')">
                     <div class="lista-item">
                         <a class="lista-link">Catálogo</a>
                     </div>
@@ -21,7 +21,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="lista-principal lista-principal--click">
+                <li class="lista-principal lista-principal--click" sec:authorize="hasAuthority('ADMINISTRADOR') or hasAuthority('SUPERADMIN')">
                     <div class="lista-item">
                         <a class="lista-link">Usuarios</a>
                     </div>
@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="lista-principal  lista-principal--click">
+                <li class="lista-principal  lista-principal--click" sec:authorize="hasAuthority('MARKETING') or hasAuthority('SUPERADMIN')">
                     <div class="lista-item">
                         <a class="lista-link">Marketing</a>
                     </div>

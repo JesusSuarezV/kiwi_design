@@ -54,6 +54,9 @@ public class WebSecurityConfig {
                                 //.requestMatchers("/personas/nueva").hasAnyAuthority("ADMIN","CREATOR")
                                 //.requestMatchers("/personas/editar/*").hasAnyAuthority("ADMIN","EDITOR")
                                 //.requestMatchers("/personas/eliminar/*").hasAnyAuthority("ADMIN")
+                                .requestMatchers("/Categorias/**", "/Productos/**", "/Usuarios/**").hasAnyAuthority("ADMINISTRADOR", "SUPERADMIN")
+                                .requestMatchers("/Productos_Descuento/**", "/Codigos/**").hasAnyAuthority("MARKETING", "SUPERADMIN")
+
                                 .anyRequest().authenticated())
 
                 .formLogin(form -> form

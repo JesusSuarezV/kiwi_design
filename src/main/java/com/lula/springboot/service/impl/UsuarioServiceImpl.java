@@ -72,9 +72,15 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public Page<Usuario> obtenerUsuarios(Pageable pageable) {
-        return usuarioRepository.findByEnabledTrueOrderByNombreAsc(pageable);
+    public Page<Usuario> obtenerUsuariosParaAdmin(Pageable pageable) {
+        return usuarioRepository.findByEnabledTrueAndRoleNotAdminOrSuperAdmin(pageable);
     }
+
+    @Override
+    public Page<Usuario> obtenerUsuariosParaSuperadmin(Pageable pageable) {
+        return usuarioRepository.findByEnabledTrueAndRoleNotSuperAdmin(pageable);
+    }
+
 
     @Override
     public boolean editarUsuario(long id) {
